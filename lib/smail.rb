@@ -1,4 +1,7 @@
 require 'smail/version'
+require 'mail'
+require 'base64'
+require 'socket'
 
 module Smail
   @@options = {}
@@ -8,7 +11,13 @@ module Smail
 
 # Default options can be set so that they don't have to be repeated.
 #
-#   Smail.options = { :from => 'noreply@example.com', :via => :smtp, :via_options => { :host => 'smtp.yourserver.com' } }
+#   Smail.options = {
+#         :from => 'noreply@example.com',
+#         :via => :smtp,
+#         :via_options => {
+#            :host => 'smtp.yourserver.com'
+#         }
+#  }
 #   Smail.mail(:to => 'foo@bar') # Sends mail to foo@bar from noreply@example.com using smtp
 #   Smail.mail(:from => 'Smail@example.com', :to => 'foo@bar') # Sends mail to foo@bar from Smail@example.com using smtp
   def self.options=(value)
