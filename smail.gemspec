@@ -7,7 +7,7 @@ require 'base64'
 require 'socket'
 
 Gem::Specification.new do |spec|
-  spec.name          = "smail"
+  spec.name          = "s_mail"
   spec.version       = Smail::VERSION
   spec.authors       = ["saroar"]
   spec.email         = ["saroar9@gmail.com"]
